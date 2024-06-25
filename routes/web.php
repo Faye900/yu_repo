@@ -20,19 +20,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/create', function () {
-    return view('teacher.create');
-});
+Route::resource('teacher',TeacherController::class)->middleware('auth');
 
-Route::get('/index', function () {
-    return view('teacher.index');
-});
+Route::resource('student',StudentController::class)->middleware('auth');
 
-Route::resource('teacher',TeacherController::class);
-
-Route::resource('student',StudentController::class);
-
-Route::resource('admin',AdminController::class);
+Route::resource('admin',AdminController::class)->middleware('auth');
 
 Auth::routes();
 

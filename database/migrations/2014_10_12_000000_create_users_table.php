@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('phone')->nullable();
             $table->string('date_of_birth')->nullable();
             $table->enum('gender',[0,1])->default(0)->comment('0 is female , 1 is male');
-            $table->enum('role',[0,1,2])->default(2)->comment('0 is admin, 1 is teacher, 2 is student');
+            $table->enum('role',[0,1,2])->default(0)->comment('0 is admin, 1 is teacher, 2 is student');
             $table->string('address')->nullable();
             $table->json('skills')->nullable();
             $table->boolean('is_fullstack')->default(0);//0 is not,1 is yes

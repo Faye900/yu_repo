@@ -49,6 +49,7 @@
                         <input type="file" class="form-control"  name="profile" id="exampleFormControlInput1" placeholder="Profile">
                     </div>
                     <div class="mb-3">
+                        <a href="{{route('teacher.index')}}" class="btn btn-outline-dark">Back</a>
                         <button class="btn btn-primary">Submit</button>
                     </div>
                 </form>

@@ -16,7 +16,9 @@ class StudentController extends Controller
      */
     public function index()
     {
+        
         $students = User::where('role','2')->get();
+        // return $students;
         return view('student.index',compact('students'));
     }
 
@@ -54,6 +56,7 @@ class StudentController extends Controller
         $student->gender = $request->gender;
         $student->address = $request->address;
         $student->profile = $newName;
+        $student->role = '2';
         $student->save();
         return redirect()->route('student.index');
     }

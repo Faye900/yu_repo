@@ -16,7 +16,11 @@
                             <th scope="col">Gender</th>
                             <th scope="col">Address</th>
                             <th scope="col">Profile</th>
+                            @if (Auth::user()->role == 2)
+                            <th scope="col" class="d-none">Action</th>
+                            @else
                             <th scope="col">Action</th>
+                            @endif
                           </tr>
                         </thead>
                         <tbody>
@@ -30,6 +34,16 @@
                             <td>{{ $teacher->gender }}</td>
                             <td>{{ $teacher->address }}</td>
                             <td><img src="{{ asset('storage/teacher/'.$teacher->profile) }}" width="50px" height="50px"></td>
+                            @if (Auth::user()->role == 2)
+                            <td class="d-none">
+                              <a href="{{ route('teacher.edit',$teacher->id) }}" class="btn btn-warning">E</a>
+                              <form action="{{ route('teacher.destroy',$teacher->id) }}" method="post" class="d-inline-block">
+                                @csrf
+                                @method('delete')
+                                <button class="btn btn-danger">D</button>
+                              </form>
+                            </td>
+                            @else
                             <td>
                               <a href="{{ route('teacher.edit',$teacher->id) }}" class="btn btn-warning">E</a>
                               <form action="{{ route('teacher.destroy',$teacher->id) }}" method="post" class="d-inline-block">
@@ -38,6 +52,7 @@
                                 <button class="btn btn-danger">D</button>
                               </form>
                             </td>
+                            @endif 
                           </tr>
                           @endforeach 
                         </tbody>

@@ -6,6 +6,7 @@ use App\Models\Admin;
 use App\Http\Requests\StoreAdminRequest;
 use App\Http\Requests\UpdateAdminRequest;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -27,8 +28,15 @@ class AdminController extends Controller
      */
     public function create()
     {
+        if(Auth::user()->role == 2)
+        {
+            return redirect()->route('student.index');
+        }elseif(Auth::user()->role == 1)
+        {
+            return redirect()->route('teacher.index');
+        }else
         return view('admin.create');
-        return redirect()->route('admin.index');
+        
     }
 
     /**
