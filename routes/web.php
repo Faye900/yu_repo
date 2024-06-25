@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,8 @@ Route::get('/index', function () {
 Route::resource('teacher',TeacherController::class);
 
 Route::resource('student',StudentController::class);
+
+Route::resource('admin',AdminController::class);
 
 Auth::routes();
 

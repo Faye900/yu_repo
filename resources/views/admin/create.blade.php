@@ -5,7 +5,7 @@
         <div class="col-md-6">
             <div class="card mt-3">
                 <div class="card-body">
-                <form action="{{ route('student.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Name</label>
@@ -37,53 +37,6 @@
                               Female
                             </label>
                           </div>
-                    </div>
-                    <div class="mb-3">
-                        <h5>Skills</h5>
-                        <div class="form-check">
-                            <input class="form-check-input" name="skill[]" type="checkbox" value="Java" id="flexCheckDefault1">
-                            <label class="form-check-label" for="flexCheckDefault1">
-                              Java
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" name="skill[]" type="checkbox" value="Angular" id="flexCheckChecked2" >
-                            <label class="form-check-label" for="flexCheckChecked2">
-                              Angular
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" name="skill[]" type="checkbox" value="WebDevelopment" id="flexCheckChecked3" >
-                            <label class="form-check-label" for="flexCheckChecked3">
-                              WebDevelopment
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" name="skill[]" type="checkbox" value="Server" id="flexCheckChecked4" >
-                            <label class="form-check-label" for="flexCheckChecked4">
-                              Server
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" name="skill[]" type="checkbox" value="AWS" id="flexCheckChecked5" >
-                            <label class="form-check-label" for="flexCheckChecked5">
-                              AWS
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" name="skill[]" type="checkbox" value="WebDesign" id="flexCheckChecked6" >
-                            <label class="form-check-label" for="flexCheckChecked6">
-                              WebDesign
-                            </label>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="form-check">
-                            <input class="form-check-input" name="is_fullstack" type="checkbox" value="1" id="is_fullstack" >
-                            <label class="form-check-label" for="is_fullstack">
-                              FullStack Developer
-                            </label>
-                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Address</label>
