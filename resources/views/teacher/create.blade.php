@@ -16,6 +16,10 @@
                         <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="Email">
                     </div>
                     <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Password</label>
+                        <input type="text" class="form-control" name="password" id="exampleFormControlInput1" placeholder="Password">
+                    </div>
+                    <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Phone</label>
                         <input type="text" class="form-control"  name="phone" id="exampleFormControlInput1" placeholder="Phone">
                     </div>

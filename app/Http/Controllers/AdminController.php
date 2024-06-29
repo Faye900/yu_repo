@@ -7,6 +7,7 @@ use App\Http\Requests\StoreAdminRequest;
 use App\Http\Requests\UpdateAdminRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -57,6 +58,7 @@ class AdminController extends Controller
         $admin = new User();
         $admin->name = $request->name;
         $admin->email = $request->email;
+        $admin->password = Hash::make($request->password);
         $admin->phone = $request->phone;
         $admin->date_of_birth = $request->date_of_birth;
         $admin->gender = $request->gender;

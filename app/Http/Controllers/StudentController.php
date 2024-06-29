@@ -6,6 +6,7 @@ use App\Models\Student;
 use App\Models\User;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
+use Illuminate\Support\Facades\Hash;
 
 class StudentController extends Controller
 {
@@ -106,6 +107,7 @@ class StudentController extends Controller
         
         $student->name = $request->name;
         $student->email = $request->email;
+        $student->password = Hash::make($request->password);
         $student->phone = $request->phone;
         $student->date_of_birth = $request->date_of_birth;
         $student->gender = $request->gender;

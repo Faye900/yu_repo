@@ -6,6 +6,7 @@ use App\Models\Teacher;
 use App\Http\Requests\StoreTeacherRequest;
 use App\Http\Requests\UpdateTeacherRequest;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class TeacherController extends Controller
 {
@@ -49,6 +50,7 @@ class TeacherController extends Controller
         $teacher = new User();
         $teacher->name = $request->name;
         $teacher->email = $request->email;
+        $teacher->password = Hash::make($request->password);
         $teacher->phone = $request->phone;
         $teacher->date_of_birth = $request->date_of_birth;
         $teacher->gender = $request->gender;
